@@ -7,22 +7,24 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.asgard.service.FichierService;
+import com.example.asgard.service.OperationService;
 
 @RestController
-@RequestMapping("/api/fichier")
+@RequestMapping("/api/operation")
 @CrossOrigin(origins = "${app.cors.allowed-origin}")
-public class FichierController {
-	private FichierService service;
+public class OperationController {
 
-	public FichierController(FichierService service) {
+	private OperationService operation;
+
+	public OperationController(OperationService operation) {
 		super();
-		this.service = service;
+		this.operation = operation;
 	}
 	
-	@PreAuthorize("hasAnyRole('ADMIN', 'SUPER_ADMIN')")
-	@GetMapping("/countAllFichier")
-	public long countFichier() {
-		return this.service.countFichier();
+	@PreAuthorize("hasAnyRole('SUPER_ADMIN', 'ADMIN')")
+	@GetMapping("/countCourseClub")
+	public long counCoursClub() {
+		return this.operation.countCourseClub();
 	}
+	
 }

@@ -31,4 +31,9 @@ public class CoursService {
 		
 		return dto;
 	}
+	
+	
+	public long countAllCourse() {
+		return repo.count();
+	}
 }

@@ -8,9 +8,10 @@ public class EtudiantResponseDto {
 	private String id_niveau;
 	private String id_parcours;
 	private String token;
+	private String statut;
 	
 	public EtudiantResponseDto(String matricule, String email, String nom, String profil, String id_niveau,
-			String id_parcours, String token) {
+			String id_parcours, String token, String statut) {
 		super();
 		this.matricule = matricule;
 		this.email = email;
@@ -19,6 +20,15 @@ public class EtudiantResponseDto {
 		this.id_niveau = id_niveau;
 		this.id_parcours = id_parcours;
 		this.token = token;
+		this.statut = statut;
+	}
+
+	public String getStatut() {
+		return statut;
+	}
+
+	public void setStatut(String statut) {
+		this.statut = statut;
 	}
 
 	public String getToken() {

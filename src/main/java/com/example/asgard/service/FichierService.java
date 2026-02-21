@@ -13,5 +13,8 @@ public class FichierService {
 		this.repo = repo;
 	}
 	
+	public long countFichier() {
+		return this.repo.count();
+	}
 	
 }

@@ -58,7 +58,7 @@ public class AuthService {
 		
 		String token = jwtService.generateToken(etudiant);
 		
-		return new EtudiantResponseDto(etudiant.getMatricule(), etudiant.getNom(), etudiant.getEmail(), etudiant.getProfil(), etudiant.getNiveau().getId_niveau(), etudiant.getParcours().getId_parcours(), token);
+		return new EtudiantResponseDto(etudiant.getMatricule(), etudiant.getNom(), etudiant.getEmail(), etudiant.getProfil(), etudiant.getNiveau().getId_niveau(), etudiant.getParcours().getId_parcours(), token, etudiant.getStatut().name());
 	}
 	
 	

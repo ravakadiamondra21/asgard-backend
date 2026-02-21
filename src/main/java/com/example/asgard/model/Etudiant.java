@@ -84,10 +84,24 @@ public class Etudiant {
 	@OneToMany(mappedBy = "etudiant")
 	private List<Reponse> reponse;
 	
+	@OneToMany(mappedBy = "admin")
+	private List<Evenement> evenement;
+	
 	public Etudiant () {
 	}
 	
 	
+	
+	public List<Evenement> getEvenement() {
+		return evenement;
+	}
+
+
+	public void setEvenement(List<Evenement> evenement) {
+		this.evenement = evenement;
+	}
+
+
 	public String getMatricule() {
 		return matricule;
 	}

@@ -37,10 +37,10 @@ public class Cours {
 	
 	@ManyToOne
 	@JoinColumn(name = "id_etudiant")
-	private Admin admin;
+	private Etudiant admin;
 	
 	@OneToMany(mappedBy = "cours")
-	private List<etudiant_cours> etudiantCours;
+	private List<etudiant_cours> etudiant_participant_cours;
 
 	public Cours() {
 		super();
