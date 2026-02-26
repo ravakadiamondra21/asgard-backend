@@ -27,7 +27,7 @@ public class Article {
 	
 	@ManyToOne
 	@JoinColumn(name = "id_etudiant")
-	private Admin admin;
+	private Etudiant admin;
 
 	public Article() {
 		super();

@@ -22,15 +22,9 @@ public class Admin extends Etudiant {
 	@Enumerated(EnumType.STRING)
 	@Column
 	private Statut permission;
+
 	
-	@OneToMany(mappedBy = "admin")
-	private List<Cours> cours;
 	
-	@OneToMany(mappedBy = "admin")
-	private List<Club> club;
-	
-	@OneToMany(mappedBy = "admin")
-	private List<Article> article;
 
 	public Admin() {
 		super();

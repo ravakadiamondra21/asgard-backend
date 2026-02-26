@@ -31,25 +31,9 @@ public class Etudiant {
 	@Column
 	private String password;
 	
-	public Statut getStatut() {
-		return statut;
-	}
-
-
-	public void setStatut(Statut statut) {
-		this.statut = statut;
-	}
-
-
-	public boolean isEnable() {
-		return enable;
-	}
-
-
-	public void setEnable(boolean enable) {
-		this.enable = enable;
-	}
-
+	@OneToMany(mappedBy = "admin")
+	private List<Club> club;
+	
 	@Column
 	private String profil;
 	
@@ -87,10 +71,34 @@ public class Etudiant {
 	@OneToMany(mappedBy = "admin")
 	private List<Evenement> evenement;
 	
+	@OneToMany(mappedBy = "admin")
+	private List<Cours> cours;
+	
+	@OneToMany(mappedBy = "admin")
+	private List<Article> article;
+	
 	public Etudiant () {
 	}
 	
-	
+	public Statut getStatut() {
+		return statut;
+	}
+
+
+	public void setStatut(Statut statut) {
+		this.statut = statut;
+	}
+
+
+	public boolean isEnable() {
+		return enable;
+	}
+
+
+	public void setEnable(boolean enable) {
+		this.enable = enable;
+	}
+
 	
 	public List<Evenement> getEvenement() {
 		return evenement;

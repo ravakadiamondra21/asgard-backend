@@ -39,9 +39,6 @@ public class Cours {
 	@JoinColumn(name = "id_etudiant")
 	private Etudiant admin;
 	
-	@OneToMany(mappedBy = "cours")
-	private List<etudiant_cours> etudiant_participant_cours;
-
 	public Cours() {
 		super();
 	}

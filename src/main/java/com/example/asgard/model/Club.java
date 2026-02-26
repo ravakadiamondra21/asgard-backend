@@ -1,6 +1,8 @@
 package com.example.asgard.model;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -33,10 +35,13 @@ public class Club {
 	
 	@ManyToOne
 	@JoinColumn(name = "id_etudiant")
-	private Admin admin;
+	private Etudiant admin;
 	
 	@OneToMany(mappedBy = "club")
 	private List<EdtClub> edtClub;
+	
+	@OneToMany(mappedBy= "club", orphanRemoval = true)
+	private Set<AdminClub> administrateur = new HashSet<>();
 
 	public Club() {
 		super();
