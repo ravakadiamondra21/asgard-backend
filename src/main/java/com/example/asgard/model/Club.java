@@ -35,13 +35,13 @@ public class Club {
 	
 	@ManyToOne
 	@JoinColumn(name = "id_etudiant")
-	private Etudiant admin;
+	private Etudiant createur_club;
 	
 	@OneToMany(mappedBy = "club")
 	private List<EdtClub> edtClub;
 	
-	@OneToMany(mappedBy= "club", orphanRemoval = true)
-	private Set<AdminClub> administrateur = new HashSet<>();
+	@OneToMany(mappedBy= "id_club", orphanRemoval = true)
+	private Set<AdminClub> adminClub = new HashSet<>();
 
 	public Club() {
 		super();

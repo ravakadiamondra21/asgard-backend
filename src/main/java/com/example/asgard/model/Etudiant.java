@@ -31,7 +31,7 @@ public class Etudiant {
 	@Column
 	private String password;
 	
-	@OneToMany(mappedBy = "admin")
+	@OneToMany(mappedBy = "createur_club")
 	private List<Club> club;
 	
 	@Column
@@ -71,8 +71,8 @@ public class Etudiant {
 	@OneToMany(mappedBy = "admin")
 	private List<Evenement> evenement;
 	
-	@OneToMany(mappedBy = "admin")
-	private List<Cours> cours;
+	@OneToMany(mappedBy = "etudiant_createur")
+	private List<Coursclub> cours;
 	
 	@OneToMany(mappedBy = "admin")
 	private List<Article> article;

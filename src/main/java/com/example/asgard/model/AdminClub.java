@@ -2,25 +2,30 @@ package com.example.asgard.model;
 
 import java.time.LocalDateTime;
 
+import jakarta.annotation.Generated;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "AdminClub")
 public class AdminClub {
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id_adminClub;
 	
-	 @ManyToMany
+	 @ManyToOne
 	 @JoinColumn(name = "id_club", nullable = false)
-	 private int id_club;
+	 private Club id_club;
 	 
-	 @ManyToMany
+	 @ManyToOne
 	 @JoinColumn(name = "matricule", nullable = false)
-	 private String matricule;
+	 private Etudiant matricule;
 	 
 	 private LocalDateTime dateAttribution;
 
@@ -32,19 +37,19 @@ public class AdminClub {
 		this.id_adminClub = id_adminClub;
 	}
 
-	public int getId_club() {
+	public Club getId_club() {
 		return id_club;
 	}
 
-	public void setId_club(int id_club) {
+	public void setId_club(Club id_club) {
 		this.id_club = id_club;
 	}
 
-	public String getMatricule() {
+	public Etudiant getMatricule() {
 		return matricule;
 	}
 
-	public void setMatricule(String matricule) {
+	public void setMatricule(Etudiant matricule) {
 		this.matricule = matricule;
 	}
 

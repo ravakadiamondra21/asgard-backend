@@ -3,7 +3,7 @@ package com.example.asgard.service;
 import org.springframework.stereotype.Service;
 
 import com.example.asgard.dto.CoursDto;
-import com.example.asgard.model.Cours;
+import com.example.asgard.model.Coursclub;
 import com.example.asgard.repository.CoursRepository;
 
 @Service
@@ -18,7 +18,7 @@ public class CoursService {
 
 
 	public CoursDto createCours(CoursDto dto) {
-		Cours cours = new Cours();
+		Coursclub cours = new Coursclub();
 		
 		cours.setId_cours(dto.getId_cours());
 		cours.setTheme(dto.getTheme());

@@ -15,40 +15,56 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "cours")
-public class Cours {	
+public class Coursclub {	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id_cours;
+	private int id_coursclub;
 	
 	@Column
 	private String theme;
 	
 	@Column
-	private String description;
+	private String description_seance;
 	
 	@Column(name="date_heure", nullable = false)
-	private LocalDateTime dateHeure;
+	private LocalDateTime date_seance;
 	
 	@Column
 	private String lieu;
 	
 	@Column
-	private String montor;
+	private String nomClubOuAss;
 	
+	public String getNomClubOuAss() {
+		return nomClubOuAss;
+	}
+
+	public void setNomClubOuAss(String nomClubOuAss) {
+		this.nomClubOuAss = nomClubOuAss;
+	}
+
+	public Etudiant getEtudiant_createur() {
+		return etudiant_createur;
+	}
+
+	public void setEtudiant_createur(Etudiant etudiant_createur) {
+		this.etudiant_createur = etudiant_createur;
+	}
+
 	@ManyToOne
 	@JoinColumn(name = "id_etudiant")
-	private Etudiant admin;
+	private Etudiant etudiant_createur;
 	
-	public Cours() {
+	public Coursclub() {
 		super();
 	}
 
 	public int getId_cours() {
-		return id_cours;
+		return id_coursclub;
 	}
 
 	public void setId_cours(int id_cours) {
-		this.id_cours = id_cours;
+		this.id_coursclub = id_cours;
 	}
 
 	public String getTheme() {
@@ -60,19 +76,19 @@ public class Cours {
 	}
 
 	public String getDescription() {
-		return description;
+		return description_seance;
 	}
 
 	public void setDescription(String description) {
-		this.description = description;
+		this.description_seance = description;
 	}
 
 	public LocalDateTime getDateHeure() {
-		return dateHeure;
+		return date_seance;
 	}
 
 	public void setDateHeure(LocalDateTime dateHeure) {
-		this.dateHeure = dateHeure;
+		this.date_seance = dateHeure;
 	}
 
 	public String getLieu() {
@@ -83,13 +99,6 @@ public class Cours {
 		this.lieu = lieu;
 	}
 
-	public String getMontor() {
-		return montor;
-	}
-
-	public void setMontor(String montor) {
-		this.montor = montor;
-	}
 	
 	
 	

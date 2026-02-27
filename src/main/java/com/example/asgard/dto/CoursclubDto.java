@@ -2,9 +2,9 @@ package com.example.asgard.dto;
 
 import java.time.LocalDateTime;
 
-public class Coursclub {
+public class CoursclubDto {
 	private int id_coursclub;
-	private String auteur;
+	private String etudiant_createur;
 	private String nomClubOuAss;
 	private String theme;
 	private String description_seance;
@@ -13,14 +13,14 @@ public class Coursclub {
 	
 	
 	
-	public Coursclub() {
+	public CoursclubDto() {
 		super();
 	}
-	public Coursclub(int id_coursclub, String auteur, String nomClubOuAss, String theme, String description_seance,
+	public CoursclubDto(int id_coursclub, String auteur, String nomClubOuAss, String theme, String description_seance,
 			LocalDateTime date_seance, String lieu) {
 		super();
 		this.id_coursclub = id_coursclub;
-		this.auteur = auteur;
+		this.etudiant_createur = auteur;
 		this.nomClubOuAss = nomClubOuAss;
 		this.theme = theme;
 		this.description_seance = description_seance;
@@ -34,10 +34,10 @@ public class Coursclub {
 		this.id_coursclub = id_coursclub;
 	}
 	public String getAuteur() {
-		return auteur;
+		return etudiant_createur;
 	}
 	public void setAuteur(String auteur) {
-		this.auteur = auteur;
+		this.etudiant_createur = auteur;
 	}
 	public String getNomClubOuAss() {
 		return nomClubOuAss;
