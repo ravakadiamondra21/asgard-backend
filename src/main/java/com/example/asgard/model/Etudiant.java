@@ -77,6 +77,7 @@ public class Etudiant {
 	@OneToMany(mappedBy = "admin")
 	private List<Article> article;
 	
+	
 	public Etudiant () {
 	}
 	

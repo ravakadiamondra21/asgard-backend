@@ -19,7 +19,7 @@ import jakarta.persistence.Table;
 public class Club {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id_club;
+	private Integer id_club;
 	
 	@Column
 	private String nom_club;
@@ -33,12 +33,13 @@ public class Club {
 	@Column
 	private String heure_default;
 	
+	@Column
+	private boolean approved;
+	
 	@ManyToOne
 	@JoinColumn(name = "id_etudiant")
 	private Etudiant createur_club;
 	
-	@OneToMany(mappedBy = "club")
-	private List<EdtClub> edtClub;
 	
 	@OneToMany(mappedBy= "id_club", orphanRemoval = true)
 	private Set<AdminClub> adminClub = new HashSet<>();
@@ -47,13 +48,19 @@ public class Club {
 		super();
 	}
 
-	public int getId_club() {
+	
+
+	public Integer getId_club() {
 		return id_club;
 	}
 
-	public void setId_club(int id_club) {
+
+
+	public void setId_club(Integer id_club) {
 		this.id_club = id_club;
 	}
+
+
 
 	public String getNom_club() {
 		return nom_club;
@@ -86,6 +93,23 @@ public class Club {
 	public void setHeure_default(String heure_default) {
 		this.heure_default = heure_default;
 	}
+
+	public Etudiant getCreateur_club() {
+		return createur_club;
+	}
+
+	public void setCreateur_club(Etudiant createur_club) {
+		this.createur_club = createur_club;
+	}
+
+	public boolean isApproved() {
+		return approved;
+	}
+
+	public void setApproved(boolean approved) {
+		this.approved = approved;
+	}
+	
 	
 	
 	

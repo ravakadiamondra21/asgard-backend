@@ -23,5 +23,5 @@ public class etudiant_club {
 	
 	@ManyToOne
 	@JoinColumn(name = "id_edt")
-	private EdtClub edtclub;
+	private Coursclub courclub;
 }

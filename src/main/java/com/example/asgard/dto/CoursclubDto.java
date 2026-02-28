@@ -16,11 +16,11 @@ public class CoursclubDto {
 	public CoursclubDto() {
 		super();
 	}
-	public CoursclubDto(int id_coursclub, String auteur, String nomClubOuAss, String theme, String description_seance,
+	public CoursclubDto(int id_coursclub, String etudiant_createur, String nomClubOuAss, String theme, String description_seance,
 			LocalDateTime date_seance, String lieu) {
 		super();
 		this.id_coursclub = id_coursclub;
-		this.etudiant_createur = auteur;
+		this.etudiant_createur = etudiant_createur;
 		this.nomClubOuAss = nomClubOuAss;
 		this.theme = theme;
 		this.description_seance = description_seance;
@@ -33,10 +33,10 @@ public class CoursclubDto {
 	public void setId_coursclub(int id_coursclub) {
 		this.id_coursclub = id_coursclub;
 	}
-	public String getAuteur() {
+	public String getEtudiant_createur() {
 		return etudiant_createur;
 	}
-	public void setAuteur(String auteur) {
+	public void setEtudiant_createur(String auteur) {
 		this.etudiant_createur = auteur;
 	}
 	public String getNomClubOuAss() {

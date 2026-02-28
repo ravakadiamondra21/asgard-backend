@@ -75,19 +75,19 @@ public class Coursclub {
 		this.theme = theme;
 	}
 
-	public String getDescription() {
+	public String getDescription_seance() {
 		return description_seance;
 	}
 
-	public void setDescription(String description) {
+	public void setDescription_seance(String description) {
 		this.description_seance = description;
 	}
 
-	public LocalDateTime getDateHeure() {
+	public LocalDateTime getDate_seace() {
 		return date_seance;
 	}
 
-	public void setDateHeure(LocalDateTime dateHeure) {
+	public void setDate_seance(LocalDateTime dateHeure) {
 		this.date_seance = dateHeure;
 	}
 

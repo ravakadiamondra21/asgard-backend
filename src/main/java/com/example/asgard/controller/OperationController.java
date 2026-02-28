@@ -23,7 +23,7 @@ public class OperationController {
 	
 	@PreAuthorize("hasAnyRole('SUPER_ADMIN', 'ADMIN')")
 	@GetMapping("/countCourseClub")
-	public long counCoursClub() {
+	public float counCoursClub() {
 		return this.operation.countCourseClub();
 	}
 	

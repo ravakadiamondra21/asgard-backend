@@ -5,12 +5,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class OperationService {
 	
-	private final CoursService cours;
+	private final CoursclubService cours;
 	private final ClubService club;
 	
 	
 
-	public OperationService(CoursService cours, ClubService club) {
+	public OperationService(CoursclubService cours, ClubService club) {
 		super();
 		this.cours = cours;
 		this.club = club;
@@ -18,7 +18,7 @@ public class OperationService {
 
 
 
-	public long countCourseClub() {
-		return cours.countAllCourse() + club.counAllClubs();
+	public float countCourseClub() {
+		return cours.count();
 	}
 }

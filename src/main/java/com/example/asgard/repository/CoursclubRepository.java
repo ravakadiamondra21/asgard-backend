@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.example.asgard.model.Coursclub;
 
-public interface CoursRepository extends JpaRepository<Coursclub, String>{
+public interface CoursclubRepository extends JpaRepository<Coursclub, String>{
 
 }
