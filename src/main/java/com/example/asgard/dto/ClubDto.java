@@ -10,8 +10,9 @@ public class ClubDto {
 	private String jour_default;
 	private String heure_default;
 	private String createur_club;
-	
-	
+	public ClubDto() {
+		super();
+	}
 
 
 	public ClubDto(String nom_club, String description_club, String jour_default, String heure_default,

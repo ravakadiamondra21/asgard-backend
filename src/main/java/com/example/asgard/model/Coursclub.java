@@ -83,7 +83,7 @@ public class Coursclub {
 		this.description_seance = description;
 	}
 
-	public LocalDateTime getDate_seace() {
+	public LocalDateTime getDate_seance() {
 		return date_seance;
 	}
 

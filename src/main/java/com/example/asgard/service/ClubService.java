@@ -1,6 +1,9 @@
 package com.example.asgard.service;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.example.asgard.dto.ClubDto;
@@ -52,6 +55,27 @@ public class ClubService {
 		club.setApproved(true);
 		this.repoClub.save(club);
 		
+	}
+	
+	
+	public List<ClubDto> getClubByApprove(boolean approve) {
+		List<Club> allClub = this.repoClub.findByApprove(approve);
+		List<ClubDto> clubDto = new ArrayList<ClubDto>();
+		
+		for (Club c : allClub) {
+			ClubDto club = new ClubDto();
+			
+			club.setId_club(c.getId_club());
+			club.setNom_club(c.getNom_club());
+			club.setDescription_club(c.getDescription_club());
+			club.setJour_default(c.getJour_default());
+			club.setHeure_default(c.getHeure_default());
+			club.setCreateur_club(c.getCreateur_club().getNom());
+			
+			clubDto.add(club);
+		}
+		
+		return clubDto;
 	}
 	
 }

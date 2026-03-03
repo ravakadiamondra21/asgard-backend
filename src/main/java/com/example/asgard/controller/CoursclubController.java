@@ -53,4 +53,9 @@ public class CoursclubController {
 	public Coursclub createCours(@RequestBody CoursclubCreateDto dto) {
 		return this.service.createCoursclub(dto);
 	}
+	
+	@GetMapping("/findByClub/{nom_club}")
+	public List<CoursclubDto> findByClub(@PathVariable String nom_club) {
+		return this.service.findByClub(nom_club);
+	}
 }

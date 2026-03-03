@@ -35,7 +35,7 @@ public class CoursclubService {
 			CoursclubDto dto = new CoursclubDto();
 			
 			dto.setId_coursclub(c.getId_cours());
-			dto.setDate_seance(c.getDate_seace());
+			dto.setDate_seance(c.getDate_seance());
 			dto.setDescription_seance(c.getDescription_seance());
 			dto.setEtudiant_createur(c.getEtudiant_createur().getMatricule());
 			dto.setLieu(c.getLieu());
@@ -89,5 +89,38 @@ public class CoursclubService {
 		
 		return coursclub;
 		
-	}	
+	}
+	
+	public List<CoursclubDto> findByClub(String club) {
+		
+		List<Coursclub> allClub = this.repo.findByClub(club);
+		List<CoursclubDto> allClubdto = new ArrayList<CoursclubDto>();
+		
+		for (Coursclub cc : allClub) {
+			
+			System.out.println(cc.getNomClubOuAss());
+			
+			CoursclubDto dto = new CoursclubDto();
+			
+			dto.setId_coursclub(cc.getId_cours());
+			dto.setEtudiant_createur(cc.getEtudiant_createur().getNom());
+			dto.setNomClubOuAss(cc.getNomClubOuAss());
+			dto.setTheme(cc.getTheme());
+			dto.setDescription_seance(cc.getDescription_seance());
+			dto.setDate_seance(cc.getDate_seance());
+			dto.setLieu(cc.getLieu());
+			
+			allClubdto.add(dto);
+			
+			
+		}
+		
+		return allClubdto;
+	}
+	
+	
+	
+	
+	
+	
 }

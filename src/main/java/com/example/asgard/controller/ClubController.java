@@ -1,7 +1,10 @@
 package com.example.asgard.controller;
 
+import java.util.List;
+
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -39,4 +42,18 @@ public class ClubController {
 	public void approveClubCreation(@PathVariable int id_club) {
 		this.service.approveClubCreation(id_club);
 	}
+	
+	@PreAuthorize("hasAnyRole('ADMIN', 'SUPER_ADMIN')")
+	@GetMapping("/getAllApprovedClub")
+	public List<ClubDto> getAllApprovedClub() {
+		return this.service.getClubByApprove(true);
+	}
+	
+	@PreAuthorize("hasAnyRole('ADMIN', 'SUPER_ADMIN')")
+	@GetMapping("/getAllNotApprovedClub")
+	public List<ClubDto> getAllNotApprovedClub() {
+		return this.service.getClubByApprove(false);
+	}
+
+	
 }
