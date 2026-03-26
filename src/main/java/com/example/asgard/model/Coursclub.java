@@ -35,6 +35,13 @@ public class Coursclub {
 	@Column
 	private String nomClubOuAss;
 	
+	@ManyToOne
+	@JoinColumn(name = "id_etudiant")
+	private Etudiant etudiant_createur;
+	
+	@Column
+	private String mentor;
+	
 	public String getNomClubOuAss() {
 		return nomClubOuAss;
 	}
@@ -51,9 +58,7 @@ public class Coursclub {
 		this.etudiant_createur = etudiant_createur;
 	}
 
-	@ManyToOne
-	@JoinColumn(name = "id_etudiant")
-	private Etudiant etudiant_createur;
+	
 	
 	public Coursclub() {
 		super();
@@ -97,6 +102,14 @@ public class Coursclub {
 
 	public void setLieu(String lieu) {
 		this.lieu = lieu;
+	}
+
+	public String getMentor() {
+		return mentor;
+	}
+
+	public void setMentor(String mentor) {
+		this.mentor = mentor;
 	}
 
 	

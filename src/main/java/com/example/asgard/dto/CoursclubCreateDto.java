@@ -9,13 +9,14 @@ public class CoursclubCreateDto {
 	private String description_seance;
 	private LocalDateTime date_seance;
 	private String lieu;
+	private String mentor;
 	//private String id_club;
 	
 	
 
 
 	public CoursclubCreateDto(int id_coursclub, String etudiant_createur, String theme,
-			String description_seance, LocalDateTime date_seance, String lieu) {
+			String description_seance, LocalDateTime date_seance, String lieu, String mentor) {
 		super();
 		this.id_coursclub = id_coursclub;
 		this.etudiant_createur = etudiant_createur;
@@ -23,6 +24,7 @@ public class CoursclubCreateDto {
 		this.description_seance = description_seance;
 		this.date_seance = date_seance;
 		this.lieu = lieu;
+		this.mentor = mentor;
 	}
 
 
@@ -86,7 +88,17 @@ public class CoursclubCreateDto {
 	}
 
 
+	public String getMentor() {
+		return mentor;
+	}
 
+
+	public void setMentor(String mentor) {
+		this.mentor = mentor;
+	}
+
+
+	
 	
 	
 	

@@ -41,6 +41,7 @@ public class CoursclubService {
 			dto.setLieu(c.getLieu());
 			dto.setNomClubOuAss(c.getNomClubOuAss());
 			dto.setTheme(c.getTheme());
+			dto.setMentor(c.getMentor());
 			
 			allCours.add(dto);
 		}
@@ -64,6 +65,7 @@ public class CoursclubService {
 		coursclub.setLieu(dto.getLieu());
 		coursclub.setDate_seance(dto.getDate_seance());
 		coursclub.setNomClubOuAss(id_club);
+		coursclub.setMentor(dto.getMentor());
 		
 		repo.save(coursclub);
 		
@@ -84,6 +86,7 @@ public class CoursclubService {
 		coursclub.setLieu(dto.getLieu());
 		coursclub.setDate_seance(dto.getDate_seance());
 		coursclub.setNomClubOuAss("Association");
+		coursclub.setMentor(dto.getMentor());
 		
 		repo.save(coursclub);
 		
@@ -109,6 +112,7 @@ public class CoursclubService {
 			dto.setDescription_seance(cc.getDescription_seance());
 			dto.setDate_seance(cc.getDate_seance());
 			dto.setLieu(cc.getLieu());
+			dto.setMentor(cc.getMentor());
 			
 			allClubdto.add(dto);
 			

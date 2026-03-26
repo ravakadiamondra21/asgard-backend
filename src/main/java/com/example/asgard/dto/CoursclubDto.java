@@ -10,14 +10,14 @@ public class CoursclubDto {
 	private String description_seance;
 	private LocalDateTime date_seance;
 	private String lieu;
-	
+	private String mentor;
 	
 	
 	public CoursclubDto() {
 		super();
 	}
 	public CoursclubDto(int id_coursclub, String etudiant_createur, String nomClubOuAss, String theme, String description_seance,
-			LocalDateTime date_seance, String lieu) {
+			LocalDateTime date_seance, String lieu, String mentor) {
 		super();
 		this.id_coursclub = id_coursclub;
 		this.etudiant_createur = etudiant_createur;
@@ -26,6 +26,7 @@ public class CoursclubDto {
 		this.description_seance = description_seance;
 		this.date_seance = date_seance;
 		this.lieu = lieu;
+		this.mentor = mentor;
 	}
 	public int getId_coursclub() {
 		return id_coursclub;
@@ -68,6 +69,12 @@ public class CoursclubDto {
 	}
 	public void setLieu(String lieu) {
 		this.lieu = lieu;
+	}
+	public String getMentor() {
+		return mentor;
+	}
+	public void setMentor(String mentor) {
+		this.mentor = mentor;
 	}
 	
 	
